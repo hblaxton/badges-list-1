@@ -11,46 +11,39 @@ export class BadgesList extends LitElement {
 
   static get styles() {
     return css`
-      :host {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        font-size: calc(10px + 2vmin);
-        color: #1a2b42;
-        max-width: 960px;
-        margin: 0 auto;
-        text-align: center;
-        background-color: var(--badges-list-background-color);
-      }
+      div {
+  margin: 20px;
+  font-size: 16px;
+}
+input {
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-bottom: 1px solid black;
+  transition: all .3s ease-in-out;
+}
+input:focus {
+  border-bottom: 2px solid blue;
+  outline: 1px solid grey;
+  outline-offset: 4px;
+}
+input:hover:not(:focus) {
+  border-bottom: 2px solid grey; 
+}
 
-      main {
-        flex-grow: 1;
-      }
-
-      .logo {
-        margin-top: 36px;
-        animation: app-logo-spin infinite 20s linear;
-      }
-
-      @keyframes app-logo-spin {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(360deg);
-        }
-      }
-
-      .app-footer {
-        font-size: calc(12px + 0.5vmin);
-        align-items: center;
-      }
-
-      .app-footer a {
-        margin-left: 5px;
-      }
+/** accessibility enhancement to not animate the changes possibly
+for users that have motion activated disabilities **/
+@media (prefers-reduced-motion) {
+  input {
+    transition: none;
+  }
+}
+.tblock {
+  color: black;
+  padding: 12px 20px 15px 20px;
+  background-color: grey;
+  margin: 25px;
+}       
     `;
   }
 
@@ -61,30 +54,11 @@ export class BadgesList extends LitElement {
 
   render() {
     return html`
-      <main>
-        <div class="logo"><img alt="open-wc logo" src=${logo} /></div>
-        <h1>${this.title}</h1>
-
-        <p>Edit <code>src/BadgesList.js</code> and save to reload.</p>
-        <a
-          class="app-link"
-          href="https://open-wc.org/guides/developing-components/code-examples/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Code examples
-        </a>
-      </main>
-
-      <p class="app-footer">
-        🚽 Made with love by
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/open-wc"
-          >open-wc</a
-        >.
-      </p>
+      <h1 id = "heading" >Explore</h1>  
+      <div class="tblock">
+      <h3 id = "heading" >Explore our content in a self-guided manner. Want us to guide you through learning new skills? Try out Missions. Looking for other people with similar focus? Find them in Groups. Interested in viewing all the options within a certain subject area? You can do that with Topics</h3>
+      <input type="text" id="getme" placeholder="Search Content & Topics" />
+      </div>
     `;
   }
 }
