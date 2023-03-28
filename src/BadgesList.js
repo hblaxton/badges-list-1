@@ -81,7 +81,10 @@ background-color: white;
 
   constructor() {
     super();
-    this.title = 'My app';
+    this.title = 'Technology & information';
+    this.body = 'APA Style Citations: Introduction';
+    this.img = 'https://badgesapp.psu.edu/uploads/badge/image/337/APA_Style.png';
+    this.author = 'Creator: Victoria Raish';
   }
 
   render() {
@@ -99,12 +102,12 @@ background-color: white;
 <!-- <div> -->
   <div class="wrapper">
   
-    <div class="badgeTitle"> Technology & information </div>
-    <div class="badgeBody"> APA Style Citations: Introduction </div>
+    <div class="badgeTitle"> ${this.title} </div>
+    <div class="badgeBody"> ${this.body} </div>
   <div class="img">
-  <img src="https://badgesapp.psu.edu/uploads/badge/image/337/APA_Style.png" width="100" height="100">
+  <img src= ${this.img} width="100" height="100">
   
-  <div class="author"> Creator: Victoria Raish </div>
+  <div class="author"> ${this.author} </div>
   </div>
 </div>  </div>
 </div>
