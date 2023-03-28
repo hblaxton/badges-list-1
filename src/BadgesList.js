@@ -1,4 +1,6 @@
 import { LitElement, html, css } from 'lit';
+import "@lrnwebcomponents/simple-icon/simple-icon.js";
+import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 
 const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
 
@@ -11,21 +13,35 @@ export class BadgesList extends LitElement {
 
   static get styles() {
     return css`
-      /* :host {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: left;
-        justify-content: flex-start;
-        font-size: calc(10px + 2vmin);
-        color: #1a2b42;
-        max-width: 960px;
-        margin: 0 auto;
-        text-align: center;
-        background-color: var(--badges-list-background-color);
-      } */
+      :host {
+        
+        color: black;
+        background-color: #3c3f3f;
+        
+      }
 
-    
+    input {
+      font-size: 20px;
+      font-weight: bold;
+      border: none;
+      border-bottom: 1px solid black;
+      transition: all .3s ease-in-out;
+    }
+
+    simple-icon{
+      width: 100px;
+      height: 100px;
+    }
+
+    input:focus {
+      border-bottom: 2px solid blue;
+      outline: 1px solid grey;
+      outline-offset: 4px;
+    }
+    input:hover:not(:focus) {
+      border-bottom: 2px solid grey; 
+    }
+
 
       .wrapper{
   background-color: lightgray;
@@ -66,13 +82,13 @@ background-color: white;
 .tblock {
   color: black;
   padding: 12px 20px 15px 20px;
-  background-color: grey;
+  background-color: white;
   margin: 25px;
 }
 .bblock {
   color: black;
   padding: 12px 20px 15px 20px;
-  background-color: grey;
+  background-color: white;
   margin: 25px;
 }
 
@@ -83,7 +99,7 @@ background-color: white;
     super();
     this.title = 'Technology & information';
     this.body = 'APA Style Citations: Introduction';
-    this.img = 'https://badgesapp.psu.edu/uploads/badge/image/337/APA_Style.png';
+    // this.img = 'https://badgesapp.psu.edu/uploads/badge/image/337/APA_Style.png';
     this.author = 'Creator: Victoria Raish';
   }
 
@@ -105,8 +121,8 @@ background-color: white;
     <div class="badgeTitle"> ${this.title} </div>
     <div class="badgeBody"> ${this.body} </div>
   <div class="img">
-  <img src= ${this.img} width="100" height="100">
-  
+  <!-- <img src= ${this.img} width="100" height="100"> -->
+  <simple-icon icon="save"></simple-icon>
   <div class="author"> ${this.author} </div>
   </div>
 </div>  </div>

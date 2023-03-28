@@ -23,6 +23,24 @@
   <badges-list></badges-list>
 
   <script type="module" src="./src/badges-list.js"></script>
+  <script>
+  
+function dqs(sel) {
+  return document.querySelector(sel);
+}
+console.log(dqs('#getme'));
+
+
+dqs('#getme').addEventListener('input', (e) => {
+  console.log(e.target);
+  dqs('.input').innerText = e.target.value;
+});
+
+dqs('input').addEventListener('change', (e) => {
+  console.log(e.target);
+  dqs('.change').innerText = e.target.value;
+});
+  </script>
 </body>
 
 </html>
