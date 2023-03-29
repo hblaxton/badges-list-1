@@ -14,12 +14,12 @@ export class BadgesList extends LitElement {
   static get styles() {
     return css`
       :host {
-        
+
         color: black;
         background-color: #3c3f3f;
         
       }
-
+  
     input {
       font-size: 20px;
       font-weight: bold;
@@ -43,54 +43,54 @@ export class BadgesList extends LitElement {
     }
 
 
-      .wrapper{
-  background-color: lightgray;
-  color: white;
-  padding: 2px 2px 2px 20px;
-  text-align: center;
-  width: 400px;
-  height: auto;
-  border-radius: 5px;
-}
+    .wrapper{
+      background-color: lightgray;
+      color: white;
+      padding: 2px 2px 2px 20px;
+      text-align: center;
+      width: 400px;
+      height: auto;
+      border-radius: 5px;
+    }
 
-.badgeTitle {
-  background-color: lightblue;
-  color: white;
-  padding: 10px 8px;
-  text-align: left;
-  border-radius: 5px;
-  color: black;
-} 
-.badgeBody{
-  background-color: white;
-  color: black;
-  text-align: left;
-  padding: 2px 2px 2px 5px;
-  font-size: 20px;
-}
-.author{
-  background-color: white;
-  text-align: left;
-  color: black;
-  padding: 2px 2px 2px 5px;
-}
-.img{
-  text-align: right;
-background-color: white;
+    .badgeTitle {
+      background-color: lightblue;
+      color: white;
+      padding: 10px 8px;
+      text-align: left;
+      border-radius: 5px;
+      color: black;
+    } 
+    .badgeBody{
+      background-color: white;
+      color: black;
+      text-align: left;
+      padding: 2px 2px 2px 5px;
+      font-size: 20px;
+    }
+    .author{
+      background-color: white;
+      text-align: left;
+      color: black;
+      padding: 2px 2px 2px 5px;
+    }
+    .img{
+      text-align: right;
+    background-color: white;
 
-}
-.tblock {
-  color: black;
-  padding: 12px 20px 15px 20px;
-  background-color: white;
-  margin: 25px;
-}
-.bblock {
-  color: black;
-  padding: 12px 20px 15px 20px;
-  background-color: white;
-  margin: 25px;
-}
+    }
+    .tblock {
+      color: black;
+      padding: 12px 20px 15px 20px;
+      background-color: white;
+      margin: 25px;
+    }
+    .bblock {
+      color: black;
+      padding: 12px 20px 15px 20px;
+      background-color: white;
+      margin: 25px;
+    }
 
     `;
   }
@@ -105,30 +105,33 @@ background-color: white;
 
   render() {
     return html`
-<h1 id = "heading" >Explore</h1>  
+
+<h1 id="heading">Explore</h1>
 
 <div class="tblock">
-  <h3 id = "heading" >Explore our content in a self-guided manner. Want us to guide you through learning new skills? Try out Missions. Looking for other people with similar focus? Find them in Groups. Interested in viewing all the options within a certain subject area? You can do that with Topics</h3>
+  <h3 id="heading">Explore our content in a self-guided manner. Want us to guide you through learning new skills? Try
+    out Missions. Looking for other people with similar focus? Find them in Groups. Interested in viewing all the
+    options within a certain subject area? You can do that with Topics</h3>
   <input type="text" id="getme" placeholder="Search Content & Topics" />
 </div>
-<div class = bblock>
-  <h3 id = "bheading" > Looking for something brand spankin' new? Here are the most recently added badges! </h3>
+<div class=bblock>
+  <h3 id="bheading"> Looking for something brand spankin' new? Here are the most recently added badges! </h3>
 
 
-<!-- <div> -->
+
   <div class="wrapper">
-  
+
     <div class="badgeTitle"> ${this.title} </div>
     <div class="badgeBody"> ${this.body} </div>
-  <div class="img">
-  <!-- <img src= ${this.img} width="100" height="100"> -->
-  <simple-icon icon="save"></simple-icon>
-  <div class="author"> ${this.author} </div>
+    <div class="img">
+
+      <simple-icon icon="save"></simple-icon>
+      <div class="author"> ${this.author} </div>
+    </div>
   </div>
-</div>  </div>
+</div>
 </div>
 
-  
     `;
   }
 }
