@@ -20,25 +20,54 @@
 </head>
 
 <body>
+<badges-types>
+  </badges-types>
+<div>
+  <p>
+
+  </p>
+</div>
+  <div class="website">
+    <h1 id="heading">Explore</h1>
+    
+    <div class="tblock">
+      <h3 id="heading">Explore our content in a self-guided manner. Want us to guide you through learning new skills? Try
+        out Missions. Looking for other people with similar focus? Find them in Groups. Interested in viewing all the
+        options within a certain subject area? You can do that with Topics</h3>
+      <input type="text" id="getme" placeholder="Search Content & Topics" />
+    </div>
+    <div class=bblock>
+  <h3 id="bheading"> Looking for something brand spankin' new? Here are the most recently added badges! </h3>
+</div>
+</div>
+</div>
+
+
   <badges-list></badges-list>
 
-  <script type="module" src="./src/badges-list.js"></script>
+  <script type="module">
+  import "./src/badges-list.js";
+  import "./src/badges-types.js";
+  </script>  
+
   <script>
-      function dqs(sel) {
-       return document.querySelector(sel);
-          }
-        console.log(dqs('#getme'));
+  
+function dqs(sel) {
+  return document.querySelector(sel);
+}
+console.log(dqs('#getme'));
 
-        dqs('#getme').addEventListener('input', (e) => {
-                console.log(e.target);
-        dqs('.input').innerText = e.target.value;
-            });
 
-         dqs('input').addEventListener('change', (e) => {
-                console.log(e.target);
-                dqs('.change').innerText = e.target.value;
-               });
-</script>
+dqs('#getme').addEventListener('input', (e) => {
+  console.log(e.target);
+  dqs('.input').innerText = e.target.value;
+});
+
+dqs('input').addEventListener('change', (e) => {
+  console.log(e.target);
+  dqs('.change').innerText = e.target.value;
+});
+  </script>
 </body>
 
 </html>
