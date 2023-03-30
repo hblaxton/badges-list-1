@@ -14,10 +14,13 @@ export class BadgesList extends LitElement {
   static get styles() {
     return css`
       :host {
-
         color: black;
-        background-color: #3c3f3f;
+  
         
+      }
+      .website{
+        padding-left: 10px;
+         /* background-color: lightgrey; */
       }
   
     input {
@@ -79,7 +82,7 @@ export class BadgesList extends LitElement {
     background-color: white;
 
     }
-    .tblock {
+    /* .tblock {
       color: black;
       padding: 12px 20px 15px 20px;
       background-color: white;
@@ -90,7 +93,7 @@ export class BadgesList extends LitElement {
       padding: 12px 20px 15px 20px;
       background-color: white;
       margin: 25px;
-    }
+    } */
 
     `;
   }
@@ -105,20 +108,6 @@ export class BadgesList extends LitElement {
 
   render() {
     return html`
-
-<h1 id="heading">Explore</h1>
-
-<div class="tblock">
-  <h3 id="heading">Explore our content in a self-guided manner. Want us to guide you through learning new skills? Try
-    out Missions. Looking for other people with similar focus? Find them in Groups. Interested in viewing all the
-    options within a certain subject area? You can do that with Topics</h3>
-  <input type="text" id="getme" placeholder="Search Content & Topics" />
-</div>
-<div class=bblock>
-  <h3 id="bheading"> Looking for something brand spankin' new? Here are the most recently added badges! </h3>
-
-
-
   <div class="wrapper">
 
     <div class="badgeTitle"> ${this.title} </div>
@@ -129,8 +118,6 @@ export class BadgesList extends LitElement {
       <div class="author"> ${this.author} </div>
     </div>
   </div>
-</div>
-</div>
 
     `;
   }
