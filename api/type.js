@@ -2,9 +2,10 @@ export default async function handler(request, res) {
 
     const type = [
     {
-    // "image": "'https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg'",
+    
     "title": "Technology & information",
     "body": "APA Style Citations: Introduction",
+    "icon": "save",
     "author": "Creator: Victoria Raish"
     
     
@@ -12,9 +13,10 @@ export default async function handler(request, res) {
     
     
     {
-    // "image": "'https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg'",
+    
     "title": "Technology & information",
     "body": "APA Style Citations: Introduction",
+    "icon": "save",
     "author": "Creator: Victoria Raish"
     
     
@@ -22,9 +24,10 @@ export default async function handler(request, res) {
     
     
     {
-    // "image": "'https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg'",
+   
     "title": "Technology & information",
     "body": "APA Style Citations: Introduction",
+    "icon": "save",
     "author": "Creator: Victoria Raish"
     
     
