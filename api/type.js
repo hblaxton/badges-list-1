@@ -14,10 +14,10 @@ export default async function handler(request, res) {
     
     {
     
-        "title": "Technology & information",
-    "body": "APA Style Citations: Introduction",
+        "title": "Proffesional Skills",
+    "body": "IST Careers- Meet a Coach - level 2",
     "icon": "save",
-    "author": "Creator: Victoria Raish"
+    "author": "Creator: Rita Griffith"
     
     
     },
@@ -25,10 +25,20 @@ export default async function handler(request, res) {
     
     {
    
-        "title": "Technology & information",
-    "body": "APA Style Citations: Introduction",
+        "title": "Agriculture and Natural Resources",
+    "body": "Treat Yourself",
     "icon": "save",
-    "author": "Creator: Victoria Raish"
+    "author": "Creator: Allain Daigle"
+    
+    
+    },
+    
+    {
+   
+        "title": "Technology & information",
+    "body": "Savy Searcher",
+    "icon": "save",
+    "author": "Creator: Emily Remlind"
     
     
     }

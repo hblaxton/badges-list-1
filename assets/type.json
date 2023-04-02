@@ -1,33 +1,44 @@
 [
-    {
  
-    "title": "Technology & information",
-    "body": "APA Style Citations: Introduction",
-    "icon": "save",
-    "author": "Creator: Victoria Raish"
+        {
     
-    
-    },
-    
-    
-    {
-
-    "title": "Technology & information",
-    "body": "APA Style Citations: Introduction",
-    "icon": "save",
-    "author": "Creator: Victoria Raish"
-    
-    
-    },
-    
-    
-    {
-
-    "title": "Technology & information",
-    "body": "APA Style Citations: Introduction",
-    "icon": "save",
-    "author": "Creator: Victoria Raish"
-    
-    
-    }
+            "title": "Technology & information",
+            "body": "APA Style Citations: Introduction",
+            "icon": "save",
+            "author": "Creator: Victoria Raish"
+        
+        
+        },
+        
+        
+        {
+        
+            "title": "Proffesional Skills",
+        "body": "IST Careers- Meet a Coach - level 2",
+        "icon": "save",
+        "author": "Creator: Rita Griffith"
+        
+        
+        },
+        
+        
+        {
+       
+            "title": "Agriculture and Natural Resources",
+        "body": "Treat Yourself",
+        "icon": "save",
+        "author": "Creator: Allain Daigle"
+        
+        
+        },
+        
+        {
+       
+            "title": "Technology & information",
+        "body": "Savy Searcher",
+        "icon": "save",
+        "author": "Creator: Emily Remlind"
+        
+        
+        }
     ]
