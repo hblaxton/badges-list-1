@@ -15,41 +15,24 @@ export class BadgesTypes extends LitElement {
     }
     constructor() {
         super();
-        this.types = [
-            {
- 
-            "title": "Technology & information",
-            "body": "APA Style Citations: Introduction",
-            "icon": "save",
-            "author": "Creator: Victoria Raish"
-            
-            
-            },
-            
-            
-            {
-        
-            "title": "Technology & information",
-            "body": "APA Style Citations: Introduction",
-            "icon": "save",
-            "author": "Creator: Victoria Raish"
-            
-            
-            },
-            
-            
-            {
-        
-            "title": "Technology & information",
-            "body": "APA Style Citations: Introduction",
-            "icon": "save",
-            "author": "Creator: Victoria Raish"
-            
-            
-            }
-        ]; 
-        
+        this.types=[]; 
+        this.updateType();
     }
+    async updateType() { 
+        const adress = new URL('../api/type');
+        fetch(adress).then((response) => {
+            if (response.ok) {
+                return response.json()
+            }
+            return[];
+        })
+        .then((data) => {
+            this.type = data;
+
+        });
+        console.log(data);
+        }
+        
     static get styles() {
         return css`
         :host {
