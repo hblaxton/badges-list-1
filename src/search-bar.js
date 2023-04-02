@@ -31,59 +31,13 @@ class SearchBar extends LitElement {
   }
 
   searchInput(e) {
-        console.log(e.target);
-        this.inputs = e.target.value;
-        this.shadowRoot.querySelector('.input').innerText = this.inputs; 
-        console.log(".search");
-        this.searchFilter()
-  }
-
-
-  searchFilter() {
-    let tempArray = [];
-    let contents = this.inputs;
-    for (let i = 0; i < contents.length; i++) {
-        if (/\s|[\p{P}]/u.test(contents[i])) { 
-            if (i > 0 && !(/\s|[\p{P}]/u.test(contents[i-1]))) { 
-                let formatContents = contents.slice(0, i).replace(/[^\w]/g, '').toLowerCase();
-                tempArray.push(formatContents); 
-            }
-            contents = contents.slice(i + 1);
-            i = -1;
-        } else if (i === contents.length - 1) { 
-            let formatContents = contents.slice(0, i + 1).replace(/[^\w]/g, '').toLowerCase();
-            tempArray.push(formatContents);
-        }
-    }
-
-    this.filteredInputs = tempArray;
-    console.log(tempArray);
-    console.log(this.filteredInputs);
-}
-
-updated(changedProperties){
-  changedProperties.forEach((oldValue, propName)=>{
-    if(propName === "inputs"){
-      this.dispatchEvent(new CustomEvent('input-changed', {
-        composed: true,
-        bubbles: true,
-        cancelable: false,
-        detail:{
-          value: this[propName]
-        }
-      }));
-      console.log(`${propName} changed. oldValue: ${oldValue}`);
-    }
-  });
-}
-    
-  render() {
-    return html`
-    <div>
-      <input type="text" class="search" placeholder="${this.topic}" @input="${this.searchInput}">
-    </div>
-    `;
+       
   }
 }
+
+
+
+ 
+          
 
 customElements.define('search-bar', SearchBar);
