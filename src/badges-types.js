@@ -8,7 +8,12 @@ export class BadgesTypes extends LitElement {
 
         static get properties(){
         return {
-            types: {type: Array},
+        types: {type: Array},
+        title: {type: String},
+        body: {type: String},
+        icon: {type: String},
+        author: {type: String},
+    
             
             
         }

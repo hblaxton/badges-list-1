@@ -1,17 +1,28 @@
 import { LitElement, html, css } from 'lit';
 import "@lrnwebcomponents/simple-icon/simple-icon.js";
 import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
-
 export class BadgesList extends LitElement {
   static get properties() {
-    return {
-      title: { type: String },
-      body: { type: String },
-      icon: { type: String },
-      author: { type: String },
 
-    };
-  }
+  return {
+    title: { 
+      type: String,
+      reflect: true
+    },
+    body: { 
+      type: String,
+      reflect: true
+    },
+    icon: { 
+      type: String,
+      reflect: true
+    },
+    author: { 
+      type: String,
+      reflect: true
+    },
+  };
+}
 
   static get styles() {
     return css`
@@ -120,9 +131,10 @@ export class BadgesList extends LitElement {
       <div class="author"> ${this.author} </div>
     </div>
   </div>
+  
 
     `;
   }
 }
 
-customElements.define('badges-list', BadgesList);
+customElements.define('badges-list',BadgesList);
