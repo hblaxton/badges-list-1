@@ -37,8 +37,8 @@
 </div>
 </div>
 
-
-  <badges-list></badges-list>
+  <search-bar></search-bar>
+  <badges-types></badges-types>
 
   <script type="module">
   import "./src/badges-list.js";
@@ -53,6 +53,10 @@ function dqs(sel) {
 }
 console.log(dqs('#getme'));
 
+dqs("search-bar").addEventListener('input-changed', (e) => {
+  console.log(e.detail);
+  dqs('badges-types').term = e.detail.value;
+});
 
 dqs('#getme').addEventListener('input', (e) => {
   console.log(e.target);
