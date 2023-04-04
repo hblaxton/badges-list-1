@@ -6,6 +6,10 @@ export class BadgesList extends LitElement {
   static get properties() {
     return {
       title: { type: String },
+      body: { type: String },
+      icon: { type: String },
+      author: { type: String },
+
     };
   }
 
