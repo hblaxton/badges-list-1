@@ -14,7 +14,7 @@ export default async function handler(request, res) {
     
     {
     
-        "title": "Proffesional Skills",
+    "title": "Proffesional Skills",
     "body": "IST Careers- Meet a Coach - level 2",
     "icon": "save",
     "author": "Creator: Rita Griffith"
