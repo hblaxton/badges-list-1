@@ -30,15 +30,16 @@
         out Missions. Looking for other people with similar focus? Find them in Groups. Interested in viewing all the
         options within a certain subject area? You can do that with Topics</h3>
       <input type="text" id="getme" placeholder="Search Content & Topics" />
+      <search-bar></search-bar>
     </div>
     <div class=bblock>
   <h3 id="bheading"> Looking for something brand spankin' new? Here are the most recently added badges! </h3>
 </div>
 </div>
-</div>
 
 
-  <badges-list></badges-list>
+  
+  <badges-types></badges-types>
 
   <script type="module">
   import "./src/badges-list.js";
@@ -53,6 +54,10 @@ function dqs(sel) {
 }
 console.log(dqs('#getme'));
 
+dqs("search-bar").addEventListener('input-changed', (e) => {
+  console.log(e.detail);
+  dqs('badges-types').term = e.detail.value;
+});
 
 dqs('#getme').addEventListener('input', (e) => {
   console.log(e.target);
