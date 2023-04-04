@@ -2,8 +2,6 @@ import { LitElement, html, css } from 'lit';
 import "@lrnwebcomponents/simple-icon/simple-icon.js";
 import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 
-const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
-
 export class BadgesList extends LitElement {
   static get properties() {
     return {
@@ -122,3 +120,5 @@ export class BadgesList extends LitElement {
     `;
   }
 }
+
+customElements.define('badges-list', BadgesList);

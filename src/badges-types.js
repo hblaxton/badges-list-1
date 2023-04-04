@@ -6,7 +6,7 @@ export class BadgesTypes extends LitElement {
         return 'badges-types';
     }
 
-        static get propeties(){
+        static get properties(){
         return {
             types: {type: Array},
             
@@ -19,7 +19,7 @@ export class BadgesTypes extends LitElement {
         this.updateType();
     }
     async updateType() { 
-        const adress = new URL('../api/type');
+        const adress = './api/type';
         fetch(adress).then((response) => {
             if (response.ok) {
                 return response.json()
@@ -30,7 +30,6 @@ export class BadgesTypes extends LitElement {
             this.types = data;
 
         });
-        console.log(data);
         }
         
     static get styles() {
