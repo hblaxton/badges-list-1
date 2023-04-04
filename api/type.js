@@ -1,6 +1,6 @@
 export default async function handler(request, res) {
 
-    const type = [
+    const types = [
     {
     
         "title": "Technology & information",
@@ -32,7 +32,7 @@ export default async function handler(request, res) {
     
     
     },
-    
+
     {
    
         "title": "Technology & information",
@@ -54,5 +54,5 @@ export default async function handler(request, res) {
     'Access-Control-Allow-Headers',
     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
   );
-  res.json(type);
+  res.json(types);
 }

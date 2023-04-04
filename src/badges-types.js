@@ -27,7 +27,7 @@ export class BadgesTypes extends LitElement {
             return[];
         })
         .then((data) => {
-            this.type = data;
+            this.types = data;
 
         });
         console.log(data);
