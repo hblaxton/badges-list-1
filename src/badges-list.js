@@ -12,7 +12,7 @@ export class BadgesList extends LitElement {
   static get styles() {
     return css`
       :host {
-        color: black;
+        color: blue;
   
         
       }
