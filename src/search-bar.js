@@ -1,43 +1,42 @@
 import { LitElement, html, css } from 'lit';
+import "@lrnwebcomponents/simple-icon/simple-icon.js";
+import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 
-class SearchBar extends LitElement {
-  static properties = {
-    topic: { type: String },
-    inputs: { type: String},
-    filteredInputs: { reflect: true, type: Array}
-  }
-  static styles = css`
-    :host {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      font-size: calc(10px + 2vmin);
-      color: #1a2b42;
-      max-width: 960px;
-      margin: 0 auto;
-      text-align: center;
-      background-color: var(--badge-list-background-color);
+export class SearchBar extends LitElement {
+    static get properties() {
+        return{
+            value: {type: String},
+        }
     }
-    .search {
-      width: 500px;
-    }
-  `;
-  constructor() {
-    super();
-    this.topic = 'Search Content, Topics, and People';
-    this.inputs = "";
-    this.filteredInputs = [];
-  }
-
-  searchInput(e) {
-       
-  }
-}
-
-
-
- 
-          
+        static get styles() {
+            return css`
+              :host {
+                display: block;
+              }
+              simple-icon{
+                display: inline-block;
+                --simple-icon-height: 24px;
+                --simple-icon-width: 24px;
+              }
+              `;
+            }
+            constructor() {
+                super();
+                this.value = '';
+            }
+            render() {
+                return html`
+                <simple-icon icon="search"></simple-icon>
+                <input type="text" placeholder="Search" @input="${this._onInput}">
+                `;
+            }
+            _onInput(e) {
+                this.value = e.target.value;
+                console.log(this.value);
+                this.dispatchEvent(new CustomEvent('value-changed', {
+                    detail: this.value
+                }));
+            }
+        }
 
 customElements.define('search-bar', SearchBar);

@@ -28,7 +28,6 @@
       <h3 id="heading">Explore our content in a self-guided manner. Want us to guide you through learning new skills? Try
         out Missions. Looking for other people with similar focus? Find them in Groups. Interested in viewing all the
         options within a certain subject area? You can do that with Topics</h3>
-      <input type="text" id="getme" placeholder="Search Content & Topics" />
       <search-bar></search-bar>
     </div>
     <div class=bblock>
@@ -38,7 +37,7 @@
 
 
   
-  <badges-types>badge-list</badges-types>
+  <badges-types></badges-types>
 
   <script type="module">
   import "./src/badges-list.js";
@@ -48,25 +47,8 @@
 
   <script>
   
-function dqs(sel) {
-  return document.querySelector(sel);
-}
-console.log(dqs('#getme'));
 
-dqs("search-bar").addEventListener('input-changed', (e) => {
-  console.log(e.detail);
-  dqs('badges-types').term = e.detail.value;
-});
 
-dqs('#getme').addEventListener('input', (e) => {
-  console.log(e.target);
-  dqs('.input').innerText = e.target.value;
-});
-
-dqs('input').addEventListener('change', (e) => {
-  console.log(e.target);
-  dqs('.change').innerText = e.target.value;
-});
   </script>
 </body>
 

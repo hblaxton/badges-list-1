@@ -1,6 +1,8 @@
 export default async function handler(request, res) {
+    console.log();
+    const search = request.query.search || '';
 
-    const types = [
+    var types = [
     {
     
         "title": "Technology & information",
@@ -25,7 +27,7 @@ export default async function handler(request, res) {
     
     {
    
-        "title": "Agriculture and Natural Resources",
+    "title": "Agriculture and Natural Resources",
     "body": "Treat Yourself",
     "icon": "save",
     "author": "Creator: Allain Daigle"
@@ -35,7 +37,7 @@ export default async function handler(request, res) {
 
     {
    
-        "title": "Technology & information",
+     "title": "Technology & information",
     "body": "Savy Searcher",
     "icon": "save",
     "author": "Creator: Emily Remlind"
@@ -43,7 +45,17 @@ export default async function handler(request, res) {
     
     }
     ];
-    
+    types.map((type) => {
+        type.index = `${type.title} ${type.body} ${type.author}`.toLowerCase(); 
+    }); 
+    types = types.filter((type) => {
+        if (types.index.indexOf(search.toLowerCase()) > -1){
+            return true;
+        };
+        return false;
+        return type.index.indexOf(search.toLowerCase()) > -1;
+    });
+
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Origin', '*');

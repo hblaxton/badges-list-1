@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import "./badges-list.js";
+import "./search-bar.js";
 
 export class BadgesTypes extends LitElement {
     static get tag(){
@@ -12,30 +13,17 @@ export class BadgesTypes extends LitElement {
         title: {type: String},
         body: {type: String},
         icon: {type: String},
-        author: {type: String},
-    
-            
-            
+        author: {type: String},        
         }
     }
     constructor() {
         super();
         this.types=[]; 
-        this.updateType();
-    }
-    async updateType() { 
-        const adress = './api/type';
-        fetch(adress).then((response) => {
-            if (response.ok) {
-                return response.json()
-            }
-            return[];
-        })
-        .then((data) => {
-            this.types = data;
-            console.log(data);
+        this.getSearchResults().then((results) => {
+            this.types = results;
         });
         }
+
         
     static get styles() {
         return css`
@@ -52,8 +40,28 @@ export class BadgesTypes extends LitElement {
         }
         `;
     }
+    async getSearchResults(value = '') {
+        const adress = `./api/type?search=${value}`;
+        const results = await fetch(adress).then((response) => {
+        if (response.ok) {
+            return response.json();
+        }
+        return [];
+    })
+        .then((data) => {
+            return data;
+        });
+        return results;
+
+    }
+    async _onSearchEvent(e) {
+        const term = e.detail;
+       this.types = await this.getSearchResults(term);
+        
+    }
     render() {
         return html`
+        <search-bar>@value-changed="${this._onSearchEvent}"></search-bar>
         <div class="wrapper">
         ${this.types.map(type => html`
         <div class="item">
