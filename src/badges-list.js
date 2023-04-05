@@ -2,8 +2,10 @@ import { LitElement, html, css } from 'lit';
 import "@lrnwebcomponents/simple-icon/simple-icon.js";
 import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 export class BadgesList extends LitElement {
+  static get tag(){
+    return 'badges-list';
+}
   static get properties() {
-
   return {
     title: { 
       type: String,

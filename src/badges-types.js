@@ -3,9 +3,6 @@ import "./badges-list.js";
 import "./search-bar.js";
 
 export class BadgesTypes extends LitElement {
-    static get tag(){
-        return 'badges-types';
-    }
 
         static get properties(){
         return {
@@ -41,8 +38,8 @@ export class BadgesTypes extends LitElement {
         `;
     }
     async getSearchResults(value = '') {
-        const adress = `./api/type?search=${value}`;
-        const results = await fetch(adress).then((response) => {
+        const address = `./api/type?search=${value}`;
+        const results = await fetch(address).then((response) => {
         if (response.ok) {
             return response.json();
         }
