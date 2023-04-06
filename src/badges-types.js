@@ -3,6 +3,9 @@ import "./badges-list.js";
 import "./search-bar.js";
 
 export class BadgesTypes extends LitElement {
+    static get tag(){
+        return 'badges-types';
+    }
 
         static get properties(){
         return {
@@ -53,12 +56,13 @@ export class BadgesTypes extends LitElement {
     }
     async _onSearchEvent(e) {
         const term = e.detail;
+        console.log(term);
        this.types = await this.getSearchResults(term);
         
     }
     render() {
         return html`
-        <search-bar>@value-changed="${this._onSearchEvent}"></search-bar>
+        <search-bar @value-changed="${this._onSearchEvent}"></search-bar>
         <div class="wrapper">
         ${this.types.map(type => html`
         <div class="item">

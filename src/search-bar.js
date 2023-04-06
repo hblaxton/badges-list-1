@@ -22,12 +22,12 @@ export class SearchBar extends LitElement {
             }
             constructor() {
                 super();
-                this.value = '';
+                this.value = 'Default Value';
             }
             render() {
                 return html`
                 <simple-icon icon="search"></simple-icon>
-                <input type="text" placeholder="Search" @input="${this._onInput}">
+                <input type="text" placeholder="Search" value="${this.value}" @input="${this._onInput}" />
                 `;
             }
             _onInput(e) {
